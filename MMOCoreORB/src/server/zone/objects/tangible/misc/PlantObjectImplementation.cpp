@@ -27,8 +27,9 @@ void PlantObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuR
 
 	if (fruitCount > 0)
 		menuResponse->addRadialMenuItem(74, 3, "@plant_grow:pick_fruit_menu");
-
-	menuResponse->addRadialMenuItem(75, 3, "DEBUG DATA");
+	PlayerObject* ghost = player->getPlayerObject();
+	if (ghost != NULL && ghost->isPrivileged())
+		menuResponse->addRadialMenuItem(75, 3, "DEBUG DATA");
 }
 
 int PlantObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
@@ -98,6 +99,7 @@ int PlantObjectImplementation::handleObjectMenuSelect(CreatureObject* player, by
 		player->sendSystemMessage("Water level: " + String::valueOf(waterLevel) + ", Ideal water level: " + String::valueOf(idealWaterLevel) + ", water quality: " + String::valueOf(waterQuality));
 		player->sendSystemMessage("Nutrient level: " + String::valueOf(nutrientLevel) + ", Ideal nutrient level: " + String::valueOf(idealNutrientLevel) + ", nutrient quality: " + String::valueOf(nutrientQuality));
 		player->sendSystemMessage("Plant health: " + String::valueOf(health) + ", growth rate: " + String::valueOf(growthRate) + ", plant size: " + String::valueOf(plantSize));
+		player->sendSystemMessage("Planth Growth: " + String::valueOf(growth));
 		player->sendSystemMessage("Critical attribute 1: " + String::valueOf(criticalAttribOne) + ", critical attribute 2: " + String::valueOf(criticalAttribTwo) + " ( see PlantObjectImplementation::getCriticalAttribute() )");
 	}
 

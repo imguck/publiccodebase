@@ -494,7 +494,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_rebel");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -517,7 +517,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					lootManager->createLoot(inventory, "axkva_min_terminal", 302);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Axkva Min");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -2000);
 
 			} else if (templatePath == "axkva_roll_imperial") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -530,7 +530,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_imperial");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -553,7 +553,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					lootManager->createLoot(inventory, "axkva_min_terminal", 302);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Axkva Min");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -2000);
 
 			} else if (templatePath == "acklay_roll_rebel") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -567,7 +567,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_rebel");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -584,23 +584,23 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int success = System::random(100);
-				if (success > 75) {
-					lootManager->createLoot(inventory, "acklay", 302);
-				} else if (success < 75 && success > 65){
-					lootManager->createLoot(inventory, "weapons_all", 336);	
-				} else if (success < 65 && success > 55){
+				if (success > 50) {
+					lootManager->createLoot(inventory, "acklay", 157);
+				} else if (success < 51 && success > 40){
+					lootManager->createLoot(inventory, "weapons_all", 336);
+				} else if (success < 41 && success > 30){
 					lootManager->createLoot(inventory, "armor_all", 336);	
-				} else if (success < 55 && success > 45){
+				} else if (success < 31 && success > 25){
 					lootManager->createLoot(inventory, "armor_attachments", 336);
-				} else if (success < 45 && success > 35){
+				} else if (success < 26 && success > 20){
 					lootManager->createLoot(inventory, "clothing_attachments", 336);
-				} else if (success < 35 && success > 15){
+				} else if (success < 21 && success > 10){
 					lootManager->createLoot(inventory, "geonosian_common", 66);
-				} else if (success < 15){
+				} else if (success < 11){
 					lootManager->createLoot(inventory, "geonosian_hard", 66);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Acklay and Geo Caves!");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -2000);
 
 			} else if (templatePath == "acklay_roll_imperial") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -614,7 +614,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_imperial");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -631,23 +631,23 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int success = System::random(100);
-				if (success > 75) {
-					lootManager->createLoot(inventory, "acklay", 302);
-				} else if (success < 75 && success > 65){
-					lootManager->createLoot(inventory, "weapons_all", 336);	
-				} else if (success < 65 && success > 55){
+				if (success > 50) {
+					lootManager->createLoot(inventory, "acklay", 157);
+				} else if (success < 51 && success > 40){
+					lootManager->createLoot(inventory, "weapons_all", 336);
+				} else if (success < 41 && success > 30){
 					lootManager->createLoot(inventory, "armor_all", 336);	
-				} else if (success < 55 && success > 45){
+				} else if (success < 31 && success > 25){
 					lootManager->createLoot(inventory, "armor_attachments", 336);
-				} else if (success < 45 && success > 35){
+				} else if (success < 26 && success > 20){
 					lootManager->createLoot(inventory, "clothing_attachments", 336);
-				} else if (success < 35 && success > 15){
+				} else if (success < 21 && success > 10){
 					lootManager->createLoot(inventory, "geonosian_common", 66);
-				} else if (success < 15){
+				} else if (success < 11){
 					lootManager->createLoot(inventory, "geonosian_hard", 66);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Acklay and Geo Caves!");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -2000);
 
 			} else if (templatePath == "firespider_roll_imperial") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -661,7 +661,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_imperial");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -680,21 +680,21 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				int success = System::random(100);
 				if (success > 75) {
 					lootManager->createLoot(inventory, "fire_breathing_spider", 108);
-				} else if (success < 75 && success > 65){
+				} else if (success < 76 && success > 65){
 					lootManager->createLoot(inventory, "weapons_all", 336);	
-				} else if (success < 65 && success > 55){
+				} else if (success < 66 && success > 55){
 					lootManager->createLoot(inventory, "armor_all", 336);	
-				} else if (success < 55 && success > 45){
+				} else if (success < 56 && success > 45){
 					lootManager->createLoot(inventory, "armor_attachments", 336);
-				} else if (success < 45 && success > 35){
+				} else if (success < 46 && success > 35){
 					lootManager->createLoot(inventory, "clothing_attachments", 336);
-				} else if (success < 35 && success > 15){
+				} else if (success < 36 && success > 15){
 					lootManager->createLoot(inventory, "geonosian_common", 66);
-				} else if (success < 15){
+				} else if (success < 16){
 					lootManager->createLoot(inventory, "geonosian_hard", 66);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Fire Spider and Geo Caves!");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -2000);
 
 			} else if (templatePath == "firespider_roll_rebel") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -708,7 +708,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_rebel");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -727,21 +727,21 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				int success = System::random(100);
 				if (success > 75) {
 					lootManager->createLoot(inventory, "fire_breathing_spider", 108);
-				} else if (success < 75 && success > 65){
+				} else if (success < 76 && success > 65){
 					lootManager->createLoot(inventory, "weapons_all", 336);	
-				} else if (success < 65 && success > 55){
+				} else if (success < 66 && success > 55){
 					lootManager->createLoot(inventory, "armor_all", 336);	
-				} else if (success < 55 && success > 45){
+				} else if (success < 56 && success > 45){
 					lootManager->createLoot(inventory, "armor_attachments", 336);
-				} else if (success < 45 && success > 35){
+				} else if (success < 46 && success > 35){
 					lootManager->createLoot(inventory, "clothing_attachments", 336);
-				} else if (success < 35 && success > 15){
+				} else if (success < 36 && success > 15){
 					lootManager->createLoot(inventory, "geonosian_common", 66);
-				} else if (success < 15){
+				} else if (success < 16){
 					lootManager->createLoot(inventory, "geonosian_hard", 66);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from the Fire Spider and Geo Caves");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -2000);
 
 			} else if (templatePath == "ancient_roll_rebel") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -755,7 +755,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_rebel");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -772,20 +772,20 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int success = System::random(100);
-				if (success < 20)
+				if (success < 21)
 				{
 					lootManager->createLoot(inventory, "armor_all", 336);
-				}else if (success > 20 && success < 40){
+				}else if (success > 20 && success < 41){
 					lootManager->createLoot(inventory, "weapons_all", 336);
-				} else if (success > 40 && success < 65) {
+				} else if (success > 40 && success < 66) {
 					lootManager->createLoot(inventory, "krayt_dragon_common", 336);
-				} else if (success > 65 && success < 85){
+				} else if (success > 65 && success < 86){
 					lootManager->createLoot(inventory, "krayt_tissue_rare", 336);
 				} else if (success > 85){
 					lootManager->createLoot(inventory, "krayt_pearls", 336);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from a Krayt Dragon Ancient!");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_rebel", -2000);
 
 			} else if (templatePath == "ancient_roll_imperial") {
 				Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
@@ -799,7 +799,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int gcwCurrency = ghost->getExperience("gcw_currency_imperial");
-				if (gcwCurrency < 5000){
+				if (gcwCurrency < 2000){
 					player->sendSystemMessage("You do not have enough GCW Currency for a loot roll");
 					return;
 				}
@@ -816,20 +816,20 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 				int success = System::random(100);
-				if (success < 20)
+				if (success < 21)
 				{
 					lootManager->createLoot(inventory, "armor_all", 336);
-				}else if (success > 20 && success < 40){
+				}else if (success > 20 && success < 41){
 					lootManager->createLoot(inventory, "weapons_all", 336);
-				} else if (success > 40 && success < 65) {
+				} else if (success > 40 && success < 66) {
 					lootManager->createLoot(inventory, "krayt_dragon_common", 336);
-				} else if (success > 65 && success < 85){
+				} else if (success > 65 && success < 86){
 					lootManager->createLoot(inventory, "krayt_tissue_rare", 336);
 				} else if (success > 85){
 					lootManager->createLoot(inventory, "krayt_pearls", 336);
 				}
 				player->sendSystemMessage("Congratulations! You have received loot from a Krayt Dragon Ancient!");
-				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -5000);
+				player->getZoneServer()->getPlayerManager()->awardExperience(player, "gcw_currency_imperial", -2000);
 
 
 			} else if (templatePath == "credits") {

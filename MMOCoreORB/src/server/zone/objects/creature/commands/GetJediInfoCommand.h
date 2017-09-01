@@ -62,7 +62,7 @@ public:
 			// Send message with current character age
 			int toonAge = targetGhost->getCharacterAgeInDays();
 			int jediTime = targetGhost->getJediTime();
-			jediTime = jediTime/2;
+			jediTime = jediTime/1.8;
 			int daysLeft = jediTime - toonAge;
 
 			player->sendSystemMessage(targetPlayer->getFirstName() + " is currently " + toonAge + " days old and has a jedi unlock time of " + jediTime + " days. " + daysLeft + " until unlock");

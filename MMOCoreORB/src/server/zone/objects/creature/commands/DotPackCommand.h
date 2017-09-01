@@ -356,6 +356,11 @@ public:
 		doAnimationsRange(creature, creatureTarget, dotPack->getObjectID(), creature->getWorldPosition().distanceTo(creatureTarget->getWorldPosition()), dotPack->isArea());
 
 		creature->notifyObservers(ObserverEventType::MEDPACKUSED);
+		if (creature->isPlayerCreature() && creatureTarget->isPlayerCreature() && creatureTarget->getPlayerObject() != NULL){
+			if ((creatureTarget->getPlayerObject()->isJedi() && creatureTarget->getWeapon()->isJediWeapon()) || creatureTarget->getPlayerObject()->hasJediTef())
+				creature->getPlayerObject()->updateLastJediCombatActionTimestamp();
+				creature->getPlayerObject()->updateLastPvpCombatActionTimestamp();
+		}
 
 		return SUCCESS;
 	}

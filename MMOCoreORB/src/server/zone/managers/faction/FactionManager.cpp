@@ -174,6 +174,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killedGhost->decreaseFactionStanding("imperial", 45);
 			playerManager->awardExperience(killerCreature, "gcw_currency_rebel", 1000);
 			zBroadcast << "Imperial \\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "Rebel \\#00cc99" << killerName;
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
 			ghost->decreaseFactionStanding("rebel", 45);
@@ -181,8 +182,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killedGhost->decreaseFactionStanding("rebel", 45);
 			playerManager->awardExperience(killerCreature, "gcw_currency_imperial", 1000);
 			zBroadcast << "Rebel \\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "Imperial \\#00cc99" << killerName;
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
-		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
 }
 
